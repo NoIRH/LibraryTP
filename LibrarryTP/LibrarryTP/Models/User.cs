@@ -14,7 +14,10 @@ namespace LibrarryTP.Models
 
         public string SecondName { get; set; }
 
+        public string Password { get; set; }
+
         public DateTime DateBirth { get; set; }
+
         public int Role { get; set; }
     }
 }

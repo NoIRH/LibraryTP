@@ -30,8 +30,8 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            label1 = new Label();
             button1 = new Button();
+            label1 = new Label();
             dataGridView1 = new DataGridView();
             Name = new DataGridViewTextBoxColumn();
             Author = new DataGridViewTextBoxColumn();
@@ -66,6 +66,15 @@
             panel1.Size = new Size(794, 84);
             panel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.Location = new Point(639, 31);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "Выйти";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -75,15 +84,6 @@
             label1.Size = new Size(219, 32);
             label1.TabIndex = 0;
             label1.Text = "Имя пользователя";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(639, 31);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Выйти";
-            button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -122,8 +122,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "MainForm";
-            Text = "Form1";
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
