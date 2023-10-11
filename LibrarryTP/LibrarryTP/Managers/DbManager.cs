@@ -33,7 +33,7 @@ namespace LibrarryTP.Managers
 
         public IEnumerable<User> GetUsers() => Context.Users;
 
-        public IEnumerable<Book> GetOperations() => Context.Books;
+        public IEnumerable<Book> GetBooks() => Context.Books;
 
         public void AddUser(User user)
         {
@@ -53,12 +53,23 @@ namespace LibrarryTP.Managers
             SaveChanges();
         }
 
-        public void RemoveOperation(Book book)
+        public void RemoveBook(Book book)
         {
             Context.Books.Remove(book);
             SaveChanges();
         }
-
+        public void RemoveAllUsers()
+        {
+            var users = Context.Users;
+            foreach (var u in users)
+                RemoveUser(u);   
+        }
+        public void RemoveAllBooks()
+        {
+            var books = Context.Books;
+            foreach (var u in books)
+                RemoveBook(u);
+        }
         public void SaveChanges() => Context.SaveChanges();
     }
 }
