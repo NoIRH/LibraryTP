@@ -32,7 +32,7 @@ namespace LibrarryTP.Managers
 
         public IEnumerable<User> GetUsers() => Context.Users;
 
-        public IEnumerable<Book> GetOperations() => Context.Books;
+        public IEnumerable<Book> GetBooks() => Context.Books;
 
         public void AddUser(User user)
         {
