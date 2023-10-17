@@ -25,7 +25,7 @@ namespace LibrarryTP.Managers
 
         public static void UpdateBooks(IEnumerable<Book> books)
         {
-            _manager.RemoveAllUsers();
+            _manager.RemoveAllBooks();
             foreach (var item in books)
                 _manager.AddBook(item);
         }
