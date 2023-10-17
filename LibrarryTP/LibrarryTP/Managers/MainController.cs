@@ -12,9 +12,9 @@ namespace LibrarryTP.Managers
             set { _manager = value; }
         }
 
-        public static IEnumerable<Book> GetOperationsAllBooks() => _manager.GetBooks();
+        public static IEnumerable<Book> GetAllBooks() => _manager.GetBooks();
 
-        public static IEnumerable<User> GetOperationsAllUsers() => _manager.GetUsers();
+        public static IEnumerable<User> GetAllUsers() => _manager.GetUsers();
 
         public static  void UpdateUsers(IEnumerable<User> users)
         {

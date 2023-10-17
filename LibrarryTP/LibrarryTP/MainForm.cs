@@ -10,8 +10,9 @@ namespace LibrarryTP
 
         public MainForm(User user)
         {
-            InitializeComponent();
             _user = user;
+            InitializeComponent();
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace LibrarryTP
         private void UpdateView()
         {
             dataGridViewBookshelve.Rows.Clear();
-            foreach (var book in MainController.GetOperationsAllBooks().Reverse())
+            foreach (var book in MainController.GetAllBooks().Reverse())
                 dataGridViewBookshelve.Rows.Add(book.Name, book.Author, book.DateOfPublication);
         }
     }

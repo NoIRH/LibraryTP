@@ -17,6 +17,7 @@ namespace LibrarryTP
         private void buttonLoginAsUser_Click(object sender, EventArgs e)
         {
             var user = AuthRegManager.Authorize(_user.Name, _user.Password);
+            if(user is null) user = AuthRegManager.Register(_user.Name, _user.Password);
             Hide();
             new MainForm(user).ShowDialog();
             Show();
@@ -25,6 +26,7 @@ namespace LibrarryTP
         private void buttonLoginAsLibrarian_Click(object sender, EventArgs e)
         {
             var user = AuthRegManager.Authorize(_librarian.Name, _librarian.Password);
+            if (user is null) user = AuthRegManager.Register(_librarian.Name, _librarian.Password);
             Hide();
             new LibrarianForm(user).ShowDialog();
             Show();
