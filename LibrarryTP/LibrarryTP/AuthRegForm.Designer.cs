@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            buttonLoginAsUser = new Button();
+            buttonLoginAsLibrarian = new Button();
             label1 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -37,25 +37,27 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // buttonLoginAsUser
             // 
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(83, 42);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 48);
-            button1.TabIndex = 0;
-            button1.Text = "Пользователь";
-            button1.UseVisualStyleBackColor = true;
+            buttonLoginAsUser.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonLoginAsUser.Location = new Point(83, 42);
+            buttonLoginAsUser.Name = "buttonLoginAsUser";
+            buttonLoginAsUser.Size = new Size(156, 48);
+            buttonLoginAsUser.TabIndex = 0;
+            buttonLoginAsUser.Text = "Пользователь";
+            buttonLoginAsUser.UseVisualStyleBackColor = true;
+            buttonLoginAsUser.Click += buttonLoginAsUser_Click;
             // 
-            // button2
+            // buttonLoginAsLibrarian
             // 
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(296, 42);
-            button2.Name = "button2";
-            button2.Size = new Size(156, 48);
-            button2.TabIndex = 1;
-            button2.Text = "Библиотекарь";
-            button2.UseVisualStyleBackColor = true;
+            buttonLoginAsLibrarian.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonLoginAsLibrarian.Location = new Point(296, 42);
+            buttonLoginAsLibrarian.Name = "buttonLoginAsLibrarian";
+            buttonLoginAsLibrarian.Size = new Size(156, 48);
+            buttonLoginAsLibrarian.TabIndex = 1;
+            buttonLoginAsLibrarian.Text = "Библиотекарь";
+            buttonLoginAsLibrarian.UseVisualStyleBackColor = true;
+            buttonLoginAsLibrarian.Click += buttonLoginAsLibrarian_Click;
             // 
             // label1
             // 
@@ -69,14 +71,13 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonLoginAsLibrarian);
+            panel1.Controls.Add(buttonLoginAsUser);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 86);
             panel1.Name = "panel1";
             panel1.Size = new Size(565, 160);
             panel1.TabIndex = 3;
-            panel1.Paint += panel1_Paint;
             // 
             // panel2
             // 
@@ -96,6 +97,7 @@
             Controls.Add(panel1);
             Name = "AuthRegForm";
             Text = "AuthRegForm";
+            Load += AuthRegForm_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -104,8 +106,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button buttonLoginAsUser;
+        private Button buttonLoginAsLibrarian;
         private Label label1;
         private Panel panel1;
         private Panel panel2;

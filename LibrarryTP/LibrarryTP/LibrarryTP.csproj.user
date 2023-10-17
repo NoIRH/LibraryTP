@@ -4,6 +4,9 @@
     <Compile Update="AuthRegForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LibrarianForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

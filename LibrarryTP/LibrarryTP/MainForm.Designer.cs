@@ -30,15 +30,14 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            button1 = new Button();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Name = new DataGridViewTextBoxColumn();
+            nameUser = new Label();
+            dataGridViewBookshelve = new DataGridView();
+            NameBook = new DataGridViewTextBoxColumn();
             Author = new DataGridViewTextBoxColumn();
             YearOfPublication = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewBookshelve).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,7 +45,7 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 1);
+            tableLayoutPanel1.Controls.Add(dataGridViewBookshelve, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -58,51 +57,41 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(nameUser);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(794, 84);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // nameUser
             // 
-            button1.Location = new Point(639, 31);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Выйти";
-            button1.UseVisualStyleBackColor = true;
+            nameUser.AutoSize = true;
+            nameUser.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            nameUser.Location = new Point(19, 22);
+            nameUser.Name = "nameUser";
+            nameUser.Size = new Size(219, 32);
+            nameUser.TabIndex = 0;
+            nameUser.Text = "Имя пользователя";
             // 
-            // label1
+            // dataGridViewBookshelve
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(60, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(219, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Имя пользователя";
+            dataGridViewBookshelve.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewBookshelve.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridViewBookshelve.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewBookshelve.Columns.AddRange(new DataGridViewColumn[] { NameBook, Author, YearOfPublication });
+            dataGridViewBookshelve.Dock = DockStyle.Fill;
+            dataGridViewBookshelve.Location = new Point(3, 93);
+            dataGridViewBookshelve.Name = "dataGridViewBookshelve";
+            dataGridViewBookshelve.RowTemplate.Height = 25;
+            dataGridViewBookshelve.Size = new Size(794, 354);
+            dataGridViewBookshelve.TabIndex = 1;
             // 
-            // dataGridView1
+            // NameBook
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Name, Author, YearOfPublication });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 93);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(794, 354);
-            dataGridView1.TabIndex = 1;
-            // 
-            // Name
-            // 
-            Name.HeaderText = "Название";
-            Name.Name = "Name";
-            Name.ReadOnly = true;
+            NameBook.HeaderText = "Название";
+            NameBook.Name = "NameBook";
+            NameBook.ReadOnly = true;
             // 
             // Author
             // 
@@ -122,10 +111,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
+            Name = "MainForm";
+            Text = "_";
+            Load += MainForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewBookshelve).EndInit();
             ResumeLayout(false);
         }
 
@@ -133,10 +125,9 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
-        private Label label1;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Name;
+        private Label nameUser;
+        private DataGridView dataGridViewBookshelve;
+        private DataGridViewTextBoxColumn NameBook;
         private DataGridViewTextBoxColumn Author;
         private DataGridViewTextBoxColumn YearOfPublication;
     }
