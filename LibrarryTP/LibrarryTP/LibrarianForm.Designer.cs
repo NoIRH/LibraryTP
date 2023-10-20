@@ -30,20 +30,17 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            buttonUserSave = new Button();
             nameAdmin = new Label();
             dataGridViewEditableListUsers = new DataGridView();
-            NameBook = new DataGridViewTextBoxColumn();
-            Author = new DataGridViewTextBoxColumn();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
-            label2 = new Label();
+            buttonBookSave = new Button();
+            adminName2 = new Label();
             dataGridViewEditableBookshelve = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEditableListUsers).BeginInit();
@@ -62,57 +59,62 @@
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(dataGridViewEditableListUsers, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.Location = new Point(3, 4);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(786, 416);
+            tableLayoutPanel1.Size = new Size(900, 559);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
             // 
+            panel1.Controls.Add(buttonUserSave);
             panel1.Controls.Add(nameAdmin);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(3, 4);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(780, 84);
+            panel1.Size = new Size(894, 112);
             panel1.TabIndex = 0;
+            // 
+            // buttonUserSave
+            // 
+            buttonUserSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonUserSave.Location = new Point(768, 20);
+            buttonUserSave.Margin = new Padding(2);
+            buttonUserSave.Name = "buttonUserSave";
+            buttonUserSave.Size = new Size(113, 70);
+            buttonUserSave.TabIndex = 1;
+            buttonUserSave.Text = "Сохранить изменения";
+            buttonUserSave.UseVisualStyleBackColor = true;
+            buttonUserSave.Click += buttonUserSave_Click;
             // 
             // nameAdmin
             // 
             nameAdmin.AutoSize = true;
             nameAdmin.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            nameAdmin.Location = new Point(24, 21);
+            nameAdmin.Location = new Point(27, 28);
             nameAdmin.Name = "nameAdmin";
-            nameAdmin.Size = new Size(44, 32);
+            nameAdmin.Size = new Size(57, 41);
             nameAdmin.TabIndex = 0;
             nameAdmin.Text = "***";
             // 
             // dataGridViewEditableListUsers
             // 
             dataGridViewEditableListUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewEditableListUsers.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridViewEditableListUsers.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewEditableListUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEditableListUsers.Columns.AddRange(new DataGridViewColumn[] { NameBook, Author });
             dataGridViewEditableListUsers.Dock = DockStyle.Fill;
-            dataGridViewEditableListUsers.Location = new Point(3, 93);
+            dataGridViewEditableListUsers.Location = new Point(2, 122);
+            dataGridViewEditableListUsers.Margin = new Padding(2);
             dataGridViewEditableListUsers.Name = "dataGridViewEditableListUsers";
-            dataGridViewEditableListUsers.RowTemplate.Height = 25;
-            dataGridViewEditableListUsers.Size = new Size(780, 354);
+            dataGridViewEditableListUsers.RowHeadersVisible = false;
+            dataGridViewEditableListUsers.RowHeadersWidth = 62;
+            dataGridViewEditableListUsers.RowTemplate.Height = 33;
+            dataGridViewEditableListUsers.Size = new Size(896, 437);
             dataGridViewEditableListUsers.TabIndex = 1;
-            // 
-            // NameBook
-            // 
-            NameBook.HeaderText = "Имя";
-            NameBook.Name = "NameBook";
-            NameBook.ReadOnly = true;
-            // 
-            // Author
-            // 
-            Author.HeaderText = "Дата рождения";
-            Author.Name = "Author";
-            Author.ReadOnly = true;
             // 
             // tabControl1
             // 
@@ -120,18 +122,20 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 450);
+            tabControl1.Size = new Size(914, 600);
             tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
             tabPage1.Controls.Add(tableLayoutPanel1);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(792, 422);
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(906, 567);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Пользователи";
             tabPage1.UseVisualStyleBackColor = true;
@@ -139,10 +143,11 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(tableLayoutPanel2);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(792, 422);
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(906, 567);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Книги";
             tabPage2.UseVisualStyleBackColor = true;
@@ -154,70 +159,71 @@
             tableLayoutPanel2.Controls.Add(panel2, 0, 0);
             tableLayoutPanel2.Controls.Add(dataGridViewEditableBookshelve, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Location = new Point(3, 4);
+            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(786, 416);
+            tableLayoutPanel2.Size = new Size(900, 559);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // panel2
             // 
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(buttonBookSave);
+            panel2.Controls.Add(adminName2);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(3, 4);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(780, 84);
+            panel2.Size = new Size(894, 112);
             panel2.TabIndex = 0;
             // 
-            // label2
+            // buttonBookSave
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(21, 22);
-            label2.Name = "label2";
-            label2.Size = new Size(219, 32);
-            label2.TabIndex = 0;
-            label2.Text = "Имя пользователя";
+            buttonBookSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonBookSave.Location = new Point(745, 19);
+            buttonBookSave.Margin = new Padding(2);
+            buttonBookSave.Name = "buttonBookSave";
+            buttonBookSave.Size = new Size(138, 70);
+            buttonBookSave.TabIndex = 2;
+            buttonBookSave.Text = "Сохранить изменения";
+            buttonBookSave.UseVisualStyleBackColor = true;
+            buttonBookSave.Click += buttonBookSave_Click;
+            // 
+            // adminName2
+            // 
+            adminName2.AutoSize = true;
+            adminName2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            adminName2.Location = new Point(24, 30);
+            adminName2.Name = "adminName2";
+            adminName2.Size = new Size(271, 41);
+            adminName2.TabIndex = 0;
+            adminName2.Text = "Имя пользователя";
             // 
             // dataGridViewEditableBookshelve
             // 
             dataGridViewEditableBookshelve.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewEditableBookshelve.BackgroundColor = SystemColors.ControlLightLight;
             dataGridViewEditableBookshelve.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEditableBookshelve.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
             dataGridViewEditableBookshelve.Dock = DockStyle.Fill;
-            dataGridViewEditableBookshelve.Location = new Point(3, 93);
+            dataGridViewEditableBookshelve.EditMode = DataGridViewEditMode.EditOnEnter;
+            dataGridViewEditableBookshelve.Location = new Point(3, 124);
+            dataGridViewEditableBookshelve.Margin = new Padding(3, 4, 3, 4);
             dataGridViewEditableBookshelve.Name = "dataGridViewEditableBookshelve";
+            dataGridViewEditableBookshelve.RowHeadersVisible = false;
+            dataGridViewEditableBookshelve.RowHeadersWidth = 62;
             dataGridViewEditableBookshelve.RowTemplate.Height = 25;
-            dataGridViewEditableBookshelve.Size = new Size(780, 354);
+            dataGridViewEditableBookshelve.Size = new Size(894, 472);
             dataGridViewEditableBookshelve.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Название";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Автор";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Год публикации";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // LibrarianForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(tabControl1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LibrarianForm";
             Load += LibrarianForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
@@ -239,18 +245,15 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Label nameAdmin;
-        private DataGridView dataGridViewEditableListUsers;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel2;
-        private Label label2;
+        private Label adminName2;
         private DataGridView dataGridViewEditableBookshelve;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn NameBook;
-        private DataGridViewTextBoxColumn Author;
+        private DataGridView dataGridViewEditableListUsers;
+        private Button buttonUserSave;
+        private Button buttonBookSave;
     }
 }
